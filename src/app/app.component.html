@@ -1,0 +1,31 @@
+<div id="container-fluid">
+  <router-outlet></router-outlet>
+  <div class="article-pagination">
+    <ul>
+      <li [ngClass]="{'active' : '' == currentUrl}"><a href="javascript:void(0)"></a></li>
+      <li [ngClass]="{'active' : 'next-rotation' == currentUrl}"><a href="javascript:void(0)"></a></li>
+      <li [ngClass]="{'active' : 'next-return-date' == currentUrl}"><a href="javascript:void(0)"></a></li>
+      <li [ngClass]="{'active' : 'next-leave-date' == currentUrl}"><a href="javascript:void(0)"></a></li>
+      <li [ngClass]="{'active' : 'shift' == currentUrl}"><a href="javascript:void(0)"></a></li>
+      <li [ngClass]="{'active' : 'request-new-reservation' == currentUrl}"><a href="javascript:void(0)"></a></li>
+      <li [ngClass]="{'active' : 'thank-you' == currentUrl}"><a href="javascript:void(0)"></a></li>
+    </ul>
+  </div>
+</div><!--container-fluid -->
+
+
+<div class="modal fade" id="modalOne" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <h3>WHY DO WE NEED TO KNOW ABOUT YOUR ENERGY?</h3>
+        <p>
+          More than 40% of Americans report being too tired to function or struggle with fatigue. A boost of energy keeps you active for better health, focus, and happiness!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
