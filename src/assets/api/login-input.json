@@ -1,0 +1,63 @@
+{
+  "$type": "WorkflowQandAInput",
+  "Message": "",
+  "WorkflowInstanceID": "904e8287-67f8-4f30-94bf-a097fe62bc81",
+  "ActionID": "b4022922-b081-4402-9b89-6d0e065405b3",
+  "Controls": [
+    {
+      "$type": "WorkflowEditableValue",
+      "Tooltip": "* Name and PTS # must match that listed on the email you received",
+      "VisibleFields": 5,
+      "ID": "7090fab6-edab-4e59-bbac-094b8e249956",
+      "VariableName": "FirstName",
+      "Label": "First Name",
+      "Instruction": "Enter your first name, last name, and PTS number",
+      "FormattedValue": "",
+      "DataType": "String",
+      "ModelVariableType": "vtString",
+      "IsRequired": true,
+      "ModifiedFormattedValue": "",
+      "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "ListSelectionInstruction": "Select..."
+    },
+    {
+      "$type": "WorkflowEditableValue",
+      "Tooltip": "* Name and PTS # must match that listed on the email you received",
+      "VisibleFields": 5,
+      "ID": "230d28ce-7a66-4711-8d65-1859f1f0ed97",
+      "VariableName": "LastName",
+      "Label": "Last Name",
+      "Instruction": "",
+      "FormattedValue": "",
+      "DataType": "String",
+      "ModelVariableType": "vtString",
+      "IsRequired": true,
+      "ModifiedFormattedValue": "",
+      "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "ListSelectionInstruction": "Select..."
+    },
+    {
+      "$type": "WorkflowEditableValue",
+      "Tooltip": "6 digit PTS number",
+      "VisibleFields": 5,
+      "ID": "443c3d3b-ffdf-4212-b9ad-3e2de1f426db",
+      "VariableName": "BadgeNumber",
+      "Label": "PTS #",
+      "Instruction": "",
+      "FormattedValue": "",
+      "DataType": "String",
+      "ModelVariableType": "vtString",
+      "IsRequired": true,
+      "ModifiedFormattedValue": "",
+      "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "ListSelectionInstruction": "Select..."
+    }
+  ],
+  "Step": 1,
+  "VisibleColumns": 5,
+  "StepDescription": "",
+  "DefaultActionLabel": "Continue",
+  "BannerURL1": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_trans_400.png",
+  "BannerURL2": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_Front_Desk.png",
+  "Name": ""
+}

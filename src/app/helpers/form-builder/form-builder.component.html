@@ -1,0 +1,7 @@
+<p *ngIf="field.DataType == 'String' && !field.AllowedValues"><input type="text" placeholder="{{field.Label}}" [required]="field.IsRequired" class="form-control custom-field"></p>
+<div class="rado-wrap" *ngIf="field.DataType == 'String' && field.AllowedValues">
+  <div class="custom-control custom-radio" *ngFor="let option of field.AllowedValues">
+    <input type="radio" id="bookRotationYes" [value]="option.Value" name="bookRotation" class="custom-control-input">
+    <label class="custom-control-label" for="bookRotationYes">{{option.Key}}</label>
+  </div>
+</div>

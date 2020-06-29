@@ -3,17 +3,8 @@
       <h2>Would you like to book your next rotation...</h2>
     </div>
     <div class="article-body">
-      <div class="field-wrap para-lg">
-        <div class="rado-wrap">
-          <div class="custom-control custom-radio">
-            <input type="radio" id="bookRotationYes" name="bookRotation" class="custom-control-input">
-            <label class="custom-control-label" for="bookRotationYes">Yes</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input type="radio" id="bookRotationNo" name="bookRotation" class="custom-control-input">
-            <label class="custom-control-label" for="bookRotationNo">No</label>
-          </div>
-        </div>
+      <div class="field-wrap para-lg" *ngIf="formBuilder">
+        <app-form-builder *ngFor="let field of formBuilder.Controls" [field]="field"></app-form-builder>
       </div>
     </div>
     <div class="article-footer">

@@ -1,0 +1,41 @@
+{
+  "$type": "WorkflowQandAInput",
+  "Message": "",
+  "WorkflowInstanceID": "904e8287-67f8-4f30-94bf-a097fe62bc81",
+  "ActionID": "1c9f01d8-9bc1-4ca3-9616-4a180d052533",
+  "Controls": [
+    {
+      "$type": "WorkflowEditableValue",
+      "Tooltip": "",
+      "VisibleFields": 4,
+      "ID": "74d4d12d-38f8-4432-8a41-b2fddcce4481",
+      "VariableName": "BookReturnYN",
+      "Label": "",
+      "Instruction": "Would you like to book your next rotation...",
+      "FormattedValue": "",
+      "DataType": "String",
+      "ModelVariableType": "vtString",
+      "IsRequired": true,
+      "ModifiedFormattedValue": "",
+      "AllowedValues": [
+        {
+          "Key": "Yes",
+          "Value": "Yes - I would like to book my next rotation!"
+        },
+        {
+          "Key": "No",
+          "Value": "No - I will not be returning at this time."
+        }
+      ],
+      "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "ListSelectionInstruction": "Please Select..."
+    }
+  ],
+  "Step": 1,
+  "VisibleColumns": 5,
+  "StepDescription": "",
+  "DefaultActionLabel": "Continue",
+  "BannerURL1": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_trans_400.png",
+  "BannerURL2": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_Front_Desk.png",
+  "Name": ""
+}

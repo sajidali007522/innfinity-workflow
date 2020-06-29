@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,9 @@ import { NextDepartureComponent } from './wizard/next-departure/next-departure.c
 import { NextShiftComponent } from './wizard/next-shift/next-shift.component';
 import { NextNewReservationComponent } from './wizard/next-new-reservation/next-new-reservation.component';
 import { ThankYouComponent } from './wizard/thank-you/thank-you.component';
+import { ConfigService } from './config.service' ;
+import {HttpClientModule} from "@angular/common/http";
+import { FormBuilderComponent } from './helpers/form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,27 @@ import { ThankYouComponent } from './wizard/thank-you/thank-you.component';
     NextDepartureComponent,
     NextShiftComponent,
     NextNewReservationComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      deps: [ConfigService],
+      useFactory: (appConfigService: ConfigService) => {
+        return () => {
+          //Make sure to return a promise!
+          return appConfigService.loadAppConfig();
+        };
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

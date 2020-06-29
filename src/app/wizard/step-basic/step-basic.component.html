@@ -1,13 +1,11 @@
-  <div class="article-wrap">
+  <div class="article-wrap" *ngIf="formBuilder">
     <div class="article-title">
       <h2>Enter your first name, last name, and PTS number</h2>
       <p><a href="#" class="text-underline" data-toggle="modal" data-target="#modalOne">Why do we need to know?</a></p>
     </div>
     <div class="article-body">
       <div class="field-wrap para-lg">
-        <p><input type="text" placeholder="First Name" class="form-control custom-field"></p>
-        <p><input type="text" placeholder="Last Name" class="form-control custom-field"></p>
-        <p><input type="text" placeholder="PTS #" class="form-control custom-field"></p>
+        <app-form-builder [field]="field" *ngFor="let field of formBuilder.Controls"></app-form-builder>
       </div>
     </div>
     <div class="article-footer">
