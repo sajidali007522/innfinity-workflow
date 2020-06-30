@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "innfinity-workflow"
+  "defaultProject": "innfinity-workflow",
+  "cli": {
+    "analytics": "197ccbd6-b041-4bc0-99b5-c076b152e837"
+  }
 }
