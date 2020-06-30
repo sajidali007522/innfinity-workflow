@@ -20,4 +20,13 @@ export class HttpService {
      // .pipe(shareReplay({ bufferSize: 1, refCount: true }));
   }
 
+  public _post(url, body, params = {}) {
+    let headers = new HttpHeaders();
+    return this.http.post(this.appConfigService.apiBaseUrl+url, body, {
+      params: params,
+      headers: headers
+    });
+    // .pipe(shareReplay({ bufferSize: 1, refCount: true }));
+  }
+
 }

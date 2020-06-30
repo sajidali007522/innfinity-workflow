@@ -1,14 +1,19 @@
   <div class="article-wrap" *ngIf="formBuilder">
-    <div class="article-title">
-      <h2>Enter your first name, last name, and PTS number</h2>
-      <p><a href="#" class="text-underline" data-toggle="modal" data-target="#modalOne">Why do we need to know?</a></p>
-    </div>
-    <div class="article-body">
+    <!--
+        1 => label
+				2 => formatted value rendered as text not editable
+				4 => formatted value and modifiable
+				5 => labels and field
+    -->
+
+    <div [ngClass]="{ 'article-title': 1 == field.VisibleFields && index == 0, 'article-body': index > 0 && 1 != field.VisibleFields }" *ngFor="let field of formBuilder.Controls; let index = $index">
+      <h2 *ngIf="field.Instruction != ''">{{field.Instruction}}</h2>
       <div class="field-wrap para-lg">
-        <app-form-builder [field]="field" *ngFor="let field of formBuilder.Controls"></app-form-builder>
+        <p *ngIf="4 != field.VisibleFields && 5 != field.VisibleFields">{{field.Label}}</p>
+        <app-form-builder [field]="field"  *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields"></app-form-builder>
       </div>
     </div>
     <div class="article-footer">
-      <a href="javascript:void(0)" class="btn" (click)="submitForm()">Next</a>
+      <a href="javascript:void(0)" class="btn" (click)="submitForm()">{{formBuilder.DefaultActionLabel || 'Next'}}</a>
     </div>
   </div>

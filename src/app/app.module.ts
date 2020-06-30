@@ -13,6 +13,10 @@ import { ThankYouComponent } from './wizard/thank-you/thank-you.component';
 import { ConfigService } from './config.service' ;
 import {HttpClientModule} from "@angular/common/http";
 import { FormBuilderComponent } from './helpers/form-builder/form-builder.component';
+import {FormsModule} from "@angular/forms";
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -27,9 +31,13 @@ import { FormBuilderComponent } from './helpers/form-builder/form-builder.compon
     FormBuilderComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDatepickerModule.forRoot(),
+    PopoverModule.forRoot()
   ],
   providers: [
     {

@@ -11,10 +11,11 @@ import { FormBuilderComponent } from "../../helpers/form-builder/form-builder.co
 export class StepBasicComponent implements OnInit {
   private ID;
   public formBuilder;
+  private step;
   constructor(private _http: HttpService,
               private router: Router,
               private activatedRoute: ActivatedRoute ) {
-
+    this.step=0;
   }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class StepBasicComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       console.log(params);
       this.ID = params["id"];
+      //this._http._get('workflow?id='+this.ID).subscribe(
       this._http._get('login-input.json?id='+this.ID).subscribe(
         response => {
           console.log(response);
@@ -33,9 +35,11 @@ export class StepBasicComponent implements OnInit {
   }
 
   submitForm () {
-    this._http._get('login-response.json?id='+this.ID).subscribe(
+    this.step++;
+    this._http._get('workflow.json').subscribe(
       response => {
-        this.router.navigate(['next-rotation'], { queryParams: { id: this.ID}});
+        console.log(this.step);
+        this.formBuilder = response[this.step];
       },
       err => {}
     )

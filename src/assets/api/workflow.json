@@ -1,0 +1,263 @@
+{
+  "1": {
+    "Message": "",
+    "WorkflowInstanceID": "f633032f-8ede-4886-a5e7-f2a091acb892",
+    "ActionID": "1c9f01d8-9bc1-4ca3-9616-4a180d052533",
+    "Controls": [
+      {
+        "Tooltip": "",
+        "VariableScope": 0,
+        "VisibleFields": 4,
+        "ID": "74d4d12d-38f8-4432-8a41-b2fddcce4481",
+        "VariableName": "BookReturnYN",
+        "Label": "",
+        "Instruction": "Would you like to book your next rotation...",
+        "FormattedValue": "",
+        "DataType": "String",
+        "ModelVariableType": "vtString",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "",
+        "ModifiedDateTimeValue": null,
+        "AllowedValues": [
+          {
+            "Key": "Yes",
+            "Value": "Yes - I would like to book my next rotation!"
+          },
+          {
+            "Key": "No",
+            "Value": "No - I will not be returning at this time."
+          }
+        ],
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Please Select..."
+      }
+    ],
+    "Step": 1,
+    "PageCnt": 0,
+    "PageNum": 0,
+    "VisibleColumns": 5,
+    "StepDescription": "",
+    "DefaultActionLabel": "Continue",
+    "ContinueAction": 0,
+    "BannerURL1": "/WorkflowDemo/Content/Images/Civeo_trans_400.png",
+    "BannerURL2": "/WorkflowDemo/Content/Images/Civeo_Front_Desk.png",
+    "Name": ""
+  },
+  "2": {
+    "$type": "WorkflowQandAInput",
+    "Message": "",
+    "WorkflowInstanceID": "904e8287-67f8-4f30-94bf-a097fe62bc81",
+    "ActionID": "1a803f2d-de51-45f1-87a7-889c93e880bd",
+    "Controls": [
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 5,
+        "ID": "cd358d71-1222-44a1-bd3c-15eb22f69162",
+        "VariableName": "NewArriveDate",
+        "Label": "Arrive Date",
+        "Instruction": "Enter the date you will return...",
+        "FormattedValue": "3/30/2020",
+        "DataType": "Date",
+        "ModelVariableType": "vtDateTime",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "%ProposedArriveDate%",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 5,
+        "ID": "aed7448a-43e6-4b35-83bb-63b75357a75e",
+        "VariableName": "NewDepartDate",
+        "Label": "Depart Date",
+        "Instruction": "Enter the date you will leave...",
+        "FormattedValue": "4/9/2020",
+        "DataType": "Date",
+        "ModelVariableType": "vtDateTime",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "%ProposedDepartDate%",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 5,
+        "ID": "1504eb40-2842-4768-938d-b97b86546fdc",
+        "VariableName": "NewShiftID",
+        "Label": "Shift",
+        "Instruction": "Select the shift for your next visit...",
+        "FormattedValue": "Day",
+        "DataType": "String",
+        "ModelVariableType": "vtGuid",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "Day",
+        "AllowedValues": [
+          {
+            "Key": "a9eefb43-e581-4629-9cd8-351cb9965813",
+            "Value": "Day"
+          },
+          {
+            "Key": "3f82d483-35ed-453b-bbfd-28424264a06a",
+            "Value": "Night"
+          }
+        ],
+        "PropertyDataType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Change..."
+      }
+    ],
+    "Step": 1,
+    "VisibleColumns": 5,
+    "StepDescription": "",
+    "DefaultActionLabel": "Continue",
+    "BannerURL1": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_trans_400.png",
+    "BannerURL2": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_Front_Desk.png",
+    "Name": ""
+  },
+  "3": {
+    "$type": "WorkflowQandAInput",
+    "Message": "",
+    "WorkflowInstanceID": "904e8287-67f8-4f30-94bf-a097fe62bc81",
+    "ActionID": "721b4d92-cd14-4ac9-94c5-a631dc8e597d",
+    "Controls": [
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 1,
+        "ID": "15838d29-6fcf-4b12-bd44-5da69f82b10d",
+        "VariableName": "",
+        "Label": "",
+        "Instruction": "Almost done...",
+        "FormattedValue": "",
+        "ModelVariableType": "vtString",
+        "ModifiedFormattedValue": "",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 1,
+        "ID": "5e030e5c-e12a-40ea-b25d-096471a3839c",
+        "VariableName": "",
+        "Label": "for Wapasu Creek Main & East Lodges",
+        "Instruction": "We will request a new reservation...",
+        "FormattedValue": "",
+        "ModelVariableType": "vtString",
+        "ModifiedFormattedValue": "",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 1,
+        "ID": "37dea7ac-51fa-47c5-a3f7-1b32e8ef4629",
+        "VariableName": "",
+        "Label": "arriving 3/31/2020",
+        "Instruction": "",
+        "FormattedValue": "",
+        "ModelVariableType": "vtString",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 1,
+        "ID": "9b92c051-6bad-4090-97f6-438c29aeaa40",
+        "VariableName": "",
+        "Label": "departing 4/9/2020",
+        "Instruction": "",
+        "FormattedValue": "",
+        "ModelVariableType": "vtString",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 1,
+        "ID": "18a1cd62-e63e-4d7d-a24e-fbdecdceff0f",
+        "VariableName": "",
+        "Label": "for Night shift",
+        "Instruction": "",
+        "FormattedValue": "",
+        "ModelVariableType": "vtString",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "",
+        "PropertyDataType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      },
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 4,
+        "ID": "77b40d51-beff-4200-89dc-7221d1cabf3b",
+        "VariableName": "",
+        "Label": "",
+        "Instruction": "Is this correct?",
+        "FormattedValue": "",
+        "DataType": "String",
+        "ModelVariableType": "vtString",
+        "IsRequired": true,
+        "ModifiedFormattedValue": "",
+        "AllowedValues": [
+          {
+            "Key": "Yes",
+            "Value": "Yes"
+          },
+          {
+            "Key": "No",
+            "Value": "No"
+          }
+        ],
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Please Select..."
+      }
+    ],
+    "Step": 1,
+    "VisibleColumns": 5,
+    "StepDescription": "",
+    "DefaultActionLabel": "Continue",
+    "BannerURL1": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_trans_400.png",
+    "BannerURL2": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_Front_Desk.png",
+    "Name": ""
+  },
+  "4": {
+    "$type": "WorkflowQandAInput",
+    "Message": "",
+    "WorkflowInstanceID": "904e8287-67f8-4f30-94bf-a097fe62bc81",
+    "ActionID": "8a982fe5-3987-4844-8ac3-1f1f8e9efa0e",
+    "Controls": [
+      {
+        "$type": "WorkflowEditableValue",
+        "Tooltip": "",
+        "VisibleFields": 1,
+        "ID": "a80d1997-4c1d-413f-9989-8d5d269a5414",
+        "VariableName": "",
+        "Label": "",
+        "Instruction": "Thank you. Your request has been received. Please check your email for confirmation of your selection shortly.",
+        "FormattedValue": "",
+        "DataType": "String",
+        "ModelVariableType": "vtString",
+        "ModifiedFormattedValue": "",
+        "PropertyDataType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "ListSelectionInstruction": "Select..."
+      }
+    ],
+    "Step": 1,
+    "VisibleColumns": 1,
+    "StepDescription": "",
+    "DefaultActionLabel": "Continue",
+    "BannerURL1": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_trans_400.png",
+    "BannerURL2": "/INNfinity.Conversation.Web_4_07_00/Content/Images/Civeo_Front_Desk.png",
+    "Name": ""
+  }
+}

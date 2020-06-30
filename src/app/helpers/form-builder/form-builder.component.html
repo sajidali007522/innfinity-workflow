@@ -1,7 +1,20 @@
-<p *ngIf="field.DataType == 'String' && !field.AllowedValues"><input type="text" placeholder="{{field.Label}}" [required]="field.IsRequired" class="form-control custom-field"></p>
-<div class="rado-wrap" *ngIf="field.DataType == 'String' && field.AllowedValues">
-  <div class="custom-control custom-radio" *ngFor="let option of field.AllowedValues">
-    <input type="radio" id="bookRotationYes" [value]="option.Value" name="bookRotation" class="custom-control-input">
-    <label class="custom-control-label" for="bookRotationYes">{{option.Key}}</label>
-  </div>
+<!-- String Input -->
+<p *ngIf="field.DataType == 'String' && !field.AllowedValues">
+  <label popover="{{field.Tooltip}}" *ngIf="field.Label"> {{field.Label}}</label>
+  <input *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields" type="text" [(ngModel)]="field.ModifiedFormattedValue" placeholder="{{field.Label}}" [required]="field.IsRequired" class="form-control custom-field">
+</p>
+
+<!-- Yes / No Radio -->
+<p *ngIf="field.DataType == 'String' && field.AllowedValues">
+    <label popover="{{field.Tooltip}}" class="custom-control-label" *ngIf="field.Label">{{field.Label}}</label>
+    <select [(ngModel)]="field.ModifiedFormattedValue" class="form-control custom-select">
+      <option value="">{{field.ListSelectionInstruction || 'Change...'}} </option>
+      <option value="{{option.Key}}" *ngFor="let option of field.AllowedValues">{{option.Value}}</option>
+    </select>
+</p>
+
+<!-- Date Picker -->
+<div *ngIf="field.DataType == 'Date'">
+  <label popover="{{field.Tooltip}}" *ngIf="field.Label"> {{field.Label}}</label>
+  <input *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields" class="form-control custom-field" type="text" popover="{{field.Tooltip}}" [(ngModel)]="field.ModifiedFormattedValue" #dp="bsDatepicker" bsDatepicker [bsConfig]="bsConfig"/>
 </div>
