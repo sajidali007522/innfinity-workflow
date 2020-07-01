@@ -6,7 +6,7 @@
 
 <!-- Yes / No Radio -->
 <p *ngIf="field.DataType == 'String' && field.AllowedValues">
-    <label popover="{{field.Tooltip}}" class="custom-control-label" *ngIf="field.Label">{{field.Label}}</label>
+    <label popover="{{field.Tooltip}}" class="" *ngIf="field.Label">{{field.Label}}</label>
     <select [(ngModel)]="field.ModifiedFormattedValue" class="form-control custom-select">
       <option value="">{{field.ListSelectionInstruction || 'Change...'}} </option>
       <option value="{{option.Key}}" *ngFor="let option of field.AllowedValues">{{option.Value}}</option>

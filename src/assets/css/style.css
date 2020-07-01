@@ -52,10 +52,10 @@ body, input, select, textarea {
 }
 body{
   background: #fff4ee;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   min-height: 100vh;
 }
 
@@ -106,22 +106,51 @@ p {
 }
 /* Header
 ______________________*/
+.popover{
+  background: #FF9975;
+}
+  .popover-body{
+    color: #fff;
+  }
+  .bs-popover-auto[x-placement^=top]>.arrow::after, 
+  .bs-popover-top>.arrow::after{
+    border-top-color: #FF9975;
+  }
+.banner-wrap{
+  background: url(../images/banner.jpg) center 60% no-repeat;
+  background-size: cover;
+  height: 350px;
+  margin: 0 0 40px;
+}
 .article-wrap{
   width: 650px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 0 40px;
 }
   .article-title{
     min-height: 150px;
     margin: 0 0 30px;
   }
   .article-wrap h2{
-    margin: 0 0 30px;
+    font-size: 30px;
+    margin: 0 0 10px;
+    padding-top: 20px;
   }
+    .article-wrap > div:first-child h2{
+      font-size: 48px;
+      margin: 0 0 30px;
+      padding: 0;
+    }
   .article-body{
     max-width: 500px;
     margin: 0 auto;
     padding: 0 0 40px;
+  }
+  .form-field{
+    max-width: 450px;
+    text-align: left;
+    margin: 0 auto;
   }
   .para-lg p{
     margin-bottom: 20px;
@@ -129,29 +158,45 @@ ______________________*/
   .para-sm p{
     margin-bottom: 10px;
   }
+  .text-only p{
+    margin-bottom: 7px;
+  }
   .gap-bot{
     padding-bottom: 20px;
   }
   .article-wrap label{
-    display: block;
+    display: inline-block;
     text-align: left;
     font-weight: bold;
     font-size: 20px;
+    color: #000;
   }
   .article-wrap .custom-field{
     color: #7C7C7C;
     font-size: 18px;
-    padding: 13px 10px 15px;
+    padding: 14px 10px 15px 20px;
     border: 3px solid #FF9975;
     background: rgba(255, 153, 113, 0.2) !important;
     height: auto;
     text-align: left;
-    box-shadow: none;
     outline: none;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
   }
+  .article-wrap .custom-field:focus{
+    box-shadow: 0 0 0 0.2rem rgba(255, 153, 113, 0.3);
+  }
+    .article-wrap .custom-field.field-datepicker{
+      background:rgba(255, 153, 113, 0.2) url(../images/datepicker-icon.png) 98% 45% no-repeat !important;
+      background-size: 30px auto !important;
+    }
+    .bs-datepicker-container{
+      padding: 0;
+    }
+    .theme-orange .bs-datepicker-head{
+      background-color: #FF9975;
+    }
   .article-footer{
     display: flex;
     flex-wrap: wrap;
@@ -269,7 +314,7 @@ ______________________*/
       color: #000000;
       font-weight: 600;
       font-family: 'poppinsmedium';
-      background:transparent url(../images/select-arrow.png) right center no-repeat;
+      background:rgba(255, 153, 113, 0.2) url(../images/select-arrow.png) right center no-repeat;
       background-size: 45px 60px;
       border:3px solid #FF9975 !important;
       box-shadow: none !important;
@@ -350,13 +395,37 @@ ______________________*/
   height: 0;
 }
 
+@media (max-width: 1400px) {
+  .banner-wrap{
+    height: 280px;
+  }
+}
+@media (max-width: 1044px) {
+  .banner-wrap{
+    height: 200px;
+  }
+  .article-wrap h2{
+    font-size: 28px;
+  }
+  .article-wrap > div:first-child h2{
+    font-size: 38px;
+  }
+}
+
 @media (max-width: 767px) {
+  .banner-wrap{
+    height: 150px;
+    margin: 0 0 25px;
+  }
   .article-wrap{
     width: 100%;
     padding: 0 20px;
   }
-  h2{
+  .article-wrap h2{
     font-size: 30px;
+  }
+  .article-wrap > div:first-child h2{
+    font-size: 34px;
   }
   .article-footer .btn{
     padding-left: 40px;
