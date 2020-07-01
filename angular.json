@@ -126,13 +126,8 @@
       }
     }
   },
-<<<<<<< HEAD
   "defaultProject": "innfinity-workflow",
   "cli": {
     "analytics": "197ccbd6-b041-4bc0-99b5-c076b152e837"
   }
 }
-=======
-  "defaultProject": "innfinity-workflow"
-}
->>>>>>> 2e0e7c72157552c4dad35b699a2157841064ebad
