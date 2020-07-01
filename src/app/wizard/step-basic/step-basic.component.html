@@ -9,8 +9,12 @@
     <div [ngClass]="{ 'article-title': 1 == field.VisibleFields && index == 0, 'article-body': index > 0 && 1 != field.VisibleFields }" *ngFor="let field of formBuilder.Controls; let index = $index">
       <h2 *ngIf="field.Instruction != ''">{{field.Instruction}}</h2>
       <div class="field-wrap para-lg">
-        <p *ngIf="4 != field.VisibleFields && 5 != field.VisibleFields">{{field.Label}}</p>
-        <app-form-builder [field]="field"  *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields"></app-form-builder>
+        <div class="text-only" *ngIf="4 != field.VisibleFields && 5 != field.VisibleFields">
+          <p>{{field.Label}}</p>
+        </div>
+        <div class="form-field" *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields">
+          <app-form-builder [field]="field" ></app-form-builder>
+        </div>
       </div>
     </div>
     <div class="article-footer">
