@@ -1,21 +1,24 @@
 <!-- String Input -->
-<p *ngIf="field.DataType == 'String' && !field.AllowedValues">
+<p *ngIf="field.DataType == 'String' && !field.AllowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label popover="{{field.Tooltip}}" *ngIf="field.Label"> {{field.Label}}</label>
   <input *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields" type="text" [(ngModel)]="field.ModifiedFormattedValue" placeholder="{{field.Label}}" [required]="field.IsRequired" class="form-control custom-field">
+  <label [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
 <!-- Yes / No Radio -->
-<p *ngIf="field.DataType == 'String' && field.AllowedValues">
+<p *ngIf="field.DataType == 'String' && field.AllowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
     <label popover="{{field.Tooltip}}" class="" *ngIf="field.Label">{{field.Label}}</label>
     <select [(ngModel)]="field.ModifiedFormattedValue" class="form-control custom-select">
       <option value="">{{field.ListSelectionInstruction || 'Change...'}} </option>
       <option value="{{option.Key}}" *ngFor="let option of field.AllowedValues">{{option.Value}}</option>
     </select>
+    <label [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}a</label>
 </p>
 
 <!-- Date Picker -->
-<p class="datepicker-wrapper" *ngIf="field.DataType == 'Date'">
+<p class="datepicker-wrapper" *ngIf="field.DataType == 'Date'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label popover="{{field.Tooltip}}" *ngIf="field.Label"> {{field.Label}}</label>
   <input *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields" class="form-control field-datepicker custom-field" type="text" popover="{{field.Tooltip}}" [(ngModel)]="field.ModifiedFormattedValue" #dp="bsDatepicker" bsDatepicker [bsConfig]="bsConfig"/>
+  <label [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
