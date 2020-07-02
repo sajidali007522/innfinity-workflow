@@ -1,4 +1,5 @@
 {
-  "apiBaseUrlfrb": "https://demo.innfinity.com/workflowDemo/home/",
-  "apiBaseUrl": "http://localhost:4200/assets/api/"
+  "apiBaseUrl": "https://demo.innfinity.com/workflowDemo/home/",
+  "apiBaseUrlDev": "http://innfinity-workflow.coddrule.com/assets/api/",
+  "apiBaseUrlLocal": "http://localhost:4200/assets/api/"
 }
