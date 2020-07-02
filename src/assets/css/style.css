@@ -171,6 +171,10 @@ ______________________*/
     font-size: 20px;
     color: #000;
   }
+  .article-wrap label.error {
+    color: #ff0000;
+    font-size: 14px;
+  }
   .article-wrap .custom-field{
     color: #7C7C7C;
     font-size: 18px;
@@ -186,6 +190,9 @@ ______________________*/
   }
   .article-wrap .custom-field:focus{
     box-shadow: 0 0 0 0.2rem rgba(255, 153, 113, 0.3);
+  }
+  .article-wrap .custom-field.error{
+    border-color: #ff0000;
   }
     .article-wrap .custom-field.field-datepicker{
       background:rgba(255, 153, 113, 0.2) url(../images/datepicker-icon.png) 98% 45% no-repeat !important;
