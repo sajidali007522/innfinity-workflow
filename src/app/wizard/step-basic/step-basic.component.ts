@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpService} from "../../http.service";
 import { FormBuilderComponent } from "../../helpers/form-builder/form-builder.component";
@@ -14,8 +14,16 @@ export class StepBasicComponent implements OnInit {
   private step;
   constructor(private _http: HttpService,
               private router: Router,
-              private activatedRoute: ActivatedRoute ) {
+              private activatedRoute: ActivatedRoute,
+              private renderer: Renderer2
+  ) {
     this.step=0;
+    this.formBuilder= {
+      initialConfig: true,
+      Controls:[
+        {"Instruction": "No Reference Found! Please check your URL or contact administrator"}
+      ]
+    }
   }
 
   ngOnInit(): void {
@@ -23,14 +31,21 @@ export class StepBasicComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       console.log(params);
       this.ID = params["id"];
-      this._http._get('login-input.json?id='+this.ID).subscribe(
-      // this._http._get('workflow?ModelOnly=true&id='+this.ID).subscribe(
-        response => {
-          console.log(response);
-          this.formBuilder = response;
-        },
-        err => {}
-      )
+      if(this.ID) {
+        this.renderer.setAttribute(document.body, 'class', 'loader');
+        this._http._get('login-input.json?id=' + this.ID).subscribe(
+          // this._http._get('workflow?ModelOnly=true&id='+this.ID).subscribe(
+          response => {
+            console.log(response);
+            this.formBuilder = response;
+          },
+          err => {
+          },
+          () => {
+            this.renderer.setAttribute(document.body, 'class', '');
+          }
+        )
+      }
     });
   }
 
@@ -38,6 +53,7 @@ export class StepBasicComponent implements OnInit {
     console.log(this.formBuilder);
     if (this.inputValidated()) {
       this.step++;
+      this.renderer.setAttribute(document.body, 'class', 'loader');
       this._http._get('workflow.json').subscribe(
       // this._http._post('ContinueWorkflowModelOnly', this.formBuilder).subscribe(
         response => {
@@ -45,6 +61,9 @@ export class StepBasicComponent implements OnInit {
           this.formBuilder = response[this.step];
         },
         err => {
+        },
+        () => {
+          this.renderer.setAttribute(document.body, 'class', '');
         }
       )
     }

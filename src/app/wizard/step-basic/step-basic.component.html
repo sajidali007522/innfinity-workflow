@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="article-footer">
+    <div class="article-footer" *ngIf="!formBuilder.initialConfig">
       <a href="javascript:void(0)" class="btn" (click)="submitForm()">{{formBuilder.DefaultActionLabel || 'Next'}}</a>
     </div>
   </div>
