@@ -23,8 +23,8 @@ export class StepBasicComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       console.log(params);
       this.ID = params["id"];
-      //this._http._get('login-input.json?id='+this.ID).subscribe(
-      this._http._get('workflow?ModelOnly=true&id='+this.ID).subscribe(
+      this._http._get('login-input.json?id='+this.ID).subscribe(
+      // this._http._get('workflow?ModelOnly=true&id='+this.ID).subscribe(
         response => {
           console.log(response);
           this.formBuilder = response;
@@ -38,8 +38,8 @@ export class StepBasicComponent implements OnInit {
     console.log(this.formBuilder);
     if (this.inputValidated()) {
       this.step++;
-      //this._http._get('workflow.json').subscribe(
-      this._http._post('ContinueWorkflowModelOnly', this.formBuilder).subscribe(
+      this._http._get('workflow.json').subscribe(
+      // this._http._post('ContinueWorkflowModelOnly', this.formBuilder).subscribe(
         response => {
           console.log(this.step);
           this.formBuilder = response[this.step];
