@@ -1,24 +1,31 @@
 <!-- String Input -->
-<p *ngIf="field.DataType == 'String' && !field.AllowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
-  <label popover="{{field.Tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.Label"> {{field.Label}}</label>
-  <input *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields" type="text" [(ngModel)]="field.ModifiedFormattedValue" placeholder="{{field.Label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+<p *ngIf="field.dataType == 'String' && !field.allowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label"> {{field.label}}</label>
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
-<!-- Yes / No Radio -->
-<p *ngIf="field.DataType == 'String' && field.AllowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
-    <label popover="{{field.Tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.Label">{{field.Label}}</label>
-    <select [(ngModel)]="field.ModifiedFormattedValue" class="form-control custom-select" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+<!-- Yes / No Select Box -->
+<p *ngIf="field.dataType == 'String' && field.allowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+    <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label">{{field.label}}</label>
+    <select [(ngModel)]="field.modifiedFormattedValue" class="form-control custom-select" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
       <option value="">{{field.ListSelectionInstruction || 'Change...'}} </option>
-      <option value="{{option.Key}}" *ngFor="let option of field.AllowedValues">{{option.Value}}</option>
+      <option value="{{option.Key}}" *ngFor="let option of field.allowedValues">{{option.Value}}</option>
     </select>
     <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
+<!-- Password Input -->
+<p *ngIf="field.dataType == 'Password' && !field.allowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label"> {{field.label}}</label>
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
+</p>
+
 <!-- Date Picker -->
-<p class="datepicker-wrapper" *ngIf="field.DataType == 'Date'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
-  <label popover="{{field.Tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.Label"> {{field.Label}}</label>
-  <input *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields" class="form-control field-datepicker custom-field" type="text" popover="{{field.Tooltip}}" [(ngModel)]="field.ModifiedFormattedValue" #dp="bsDatepicker" bsDatepicker [bsConfig]="bsConfig" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}"/>
+<p class="datepicker-wrapper" *ngIf="field.dataType == 'Date'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label"> {{field.label}}</label>
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" class="form-control field-datepicker custom-field" type="text" popover="{{field.tooltip}}" [(ngModel)]="field.modifiedFormattedValue" #dp="bsDatepicker" bsDatepicker [bsConfig]="bsConfig" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}"/>
   <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 

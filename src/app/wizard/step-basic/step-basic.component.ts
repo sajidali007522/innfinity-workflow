@@ -10,7 +10,7 @@ import { FormBuilderComponent } from "../../helpers/form-builder/form-builder.co
 })
 export class StepBasicComponent implements OnInit {
   private ID;
-  public formBuilder;
+  public page;
   private step;
   constructor(private _http: HttpService,
               private router: Router,
@@ -18,26 +18,31 @@ export class StepBasicComponent implements OnInit {
               private renderer: Renderer2
   ) {
     this.step=0;
-    this.formBuilder= {
-      initialConfig: true,
-      Controls:[
-        {"Instruction": "No Reference Found! Please check your URL or contact administrator"}
-      ]
+    this.page= {
+      pageContent:{
+        initialConfig: true,
+        controls: {"Instruction": "No Reference Found! Please check your URL or contact administrator"}
+      },
+      pageInfo:{
+        banner1: "/WorkflowDemo/Content/Images/Civeo_trans_400.png",
+        banner2: "/WorkflowDemo/Content/Images/Civeo_Front_Desk.png",
+        footer: "© 2020 - INNfinity ∞ Workflow Web"
+      },
     }
   }
 
   ngOnInit(): void {
 
-    this.activatedRoute.queryParams.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       console.log(params);
-      this.ID = params["id"];
+      this.ID = params["ID"];
       if(this.ID) {
         this.renderer.setAttribute(document.body, 'class', 'loader');
-        this._http._get('login-input.json?id=' + this.ID).subscribe(
-          // this._http._get('workflow?ModelOnly=true&id='+this.ID).subscribe(
+        //this._http._get('login-input.json?id=' + this.ID).subscribe(
+        this._http._get(this.ID+'').subscribe(
           response => {
             console.log(response);
-            this.formBuilder = response;
+            this.page = response;
           },
           err => {
           },
@@ -50,15 +55,15 @@ export class StepBasicComponent implements OnInit {
   }
 
   submitForm () {
-    console.log(this.formBuilder);
+    console.log(this.page);
     if (this.inputValidated()) {
       this.step++;
       this.renderer.setAttribute(document.body, 'class', 'loader');
-      this._http._get('workflow.json').subscribe(
-      // this._http._post('ContinueWorkflowModelOnly', this.formBuilder).subscribe(
+      //this._http._get('workflow.json').subscribe(
+      this._http._post(this.ID+'/continue', this.page.pageContent).subscribe(
         response => {
           console.log(this.step);
-          this.formBuilder = response[this.step];
+          this.page.pageInfo = response;
         },
         err => {
         },
@@ -71,9 +76,9 @@ export class StepBasicComponent implements OnInit {
 
   inputValidated () {
     let validated = true;
-    this.formBuilder.Controls.filter(function(field){
-      if((field.VisibleFields == 4 || field.VisibleFields == 5) && field.IsRequired) {
-        if(field.ModifiedFormattedValue == '') {
+    this.page.pageContent.controls.filter(function(field){
+      if((field.visibleFields == 4 || field.visibleFields == 5) && field.isRequired) {
+        if(field.modifiedFormattedValue == '') {
           field.errorMessage = "Field is Required";
           validated = false;
         } else {

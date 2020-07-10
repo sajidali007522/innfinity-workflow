@@ -1,13 +1,13 @@
 <div class="logo-wrap">
   <div class="container">
     <div class="logo">
-      <img src="../../../assets/images/logo.jpg" alt="">
+      <img src="{{page.pageInfo.banner1}}" alt="">
     </div>
   </div>
 </div>
 
-<div class="banner-wrap"></div>
-<div class="article-wrap" *ngIf="formBuilder">
+<div class="banner-wrap" [ngStyle]="{Background: page.pageInfo.banner2}"></div>
+<div class="article-wrap" *ngIf="page.pageContent">
     <!--
         1 => label
 				2 => formatted value rendered as text not editable
@@ -15,18 +15,18 @@
 				5 => labels and field
     -->
 
-    <div [ngClass]="{ 'article-title': 1 == field.VisibleFields && index == 0, 'article-body': index > 0 && 1 != field.VisibleFields }" *ngFor="let field of formBuilder.Controls; let index = $index">
-      <h2 *ngIf="field.Instruction != ''">{{field.Instruction}}</h2>
+    <div [ngClass]="{ 'article-title': 1 == field.visibleFields && index == 0, 'article-body': index > 0 && 1 != field.visibleFields }" *ngFor="let field of page.pageContent.controls; let index = $index">
+      <h2 *ngIf="field.instruction != ''">{{field.instruction}}</h2>
       <div class="field-wrap para-lg">
-        <div class="text-only" *ngIf="4 != field.VisibleFields && 5 != field.VisibleFields">
+        <div class="text-only" *ngIf="4 != field.visibleFields && 5 != field.visibleFields">
           <p>{{field.Label}}</p>
         </div>
-        <div class="form-field" *ngIf="4 == field.VisibleFields || 5 == field.VisibleFields">
+        <div class="form-field" *ngIf="4 == field.visibleFields || 5 == field.visibleFields">
           <app-form-builder [field]="field" ></app-form-builder>
         </div>
       </div>
     </div>
-    <div class="article-footer" *ngIf="!formBuilder.initialConfig">
-      <a href="javascript:void(0)" class="btn" (click)="submitForm()">{{formBuilder.DefaultActionLabel || 'Next'}}</a>
+    <div class="article-footer" *ngIf="!page.pageContent.initialConfig">
+      <a href="javascript:void(0)" class="btn" (click)="submitForm()">{{page.pageContent.defaultActionLabel || 'Next'}}</a>
     </div>
   </div>
