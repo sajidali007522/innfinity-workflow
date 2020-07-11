@@ -19,7 +19,7 @@
       <h2 *ngIf="field.instruction != ''">{{field.instruction}}</h2>
       <div class="field-wrap para-lg">
         <div class="text-only" *ngIf="4 != field.visibleFields && 5 != field.visibleFields">
-          <p>{{field.Label}}</p>
+          <p>{{field.label}}</p>
         </div>
         <div class="form-field" *ngIf="4 == field.visibleFields || 5 == field.visibleFields">
           <app-form-builder [field]="field" ></app-form-builder>
@@ -27,6 +27,10 @@
       </div>
     </div>
     <div class="article-footer" *ngIf="!page.pageContent.initialConfig">
-      <a href="javascript:void(0)" class="btn" (click)="submitForm()">{{page.pageContent.defaultActionLabel || 'Next'}}</a>
+      <a href="javascript:void(0)" class="btn" (click)="submitForm()" *ngIf="page.pageContent.step != 999">{{page.pageContent.defaultActionLabel || 'Next'}}</a>
+      <a href="javascript:void(0)" class="btn" (click)="resetThisID()" *ngIf="page.pageContent.step == 999">Reset</a>
     </div>
   </div>
+<div class="footer">
+  <p>{{page.pageInfo.footer}}</p>
+</div>

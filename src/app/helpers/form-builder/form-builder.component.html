@@ -10,7 +10,7 @@
     <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label">{{field.label}}</label>
     <select [(ngModel)]="field.modifiedFormattedValue" class="form-control custom-select" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
       <option value="">{{field.ListSelectionInstruction || 'Change...'}} </option>
-      <option value="{{option.Key}}" *ngFor="let option of field.allowedValues">{{option.Value}}</option>
+      <option value="{{option.key}}" *ngFor="let option of field.allowedValues">{{option.value}}</option>
     </select>
     <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>

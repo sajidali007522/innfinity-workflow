@@ -21,7 +21,7 @@ export class StepBasicComponent implements OnInit {
     this.page= {
       pageContent:{
         initialConfig: true,
-        controls: {"Instruction": "No Reference Found! Please check your URL or contact administrator"}
+        controls: [{"Instruction": "No Reference Found! Please check your URL or contact administrator"}]
       },
       pageInfo:{
         banner1: "/WorkflowDemo/Content/Images/Civeo_trans_400.png",
@@ -63,7 +63,7 @@ export class StepBasicComponent implements OnInit {
       this._http._post(this.ID+'/continue', this.page.pageContent).subscribe(
         response => {
           console.log(this.step);
-          this.page.pageInfo = response;
+          this.page.pageContent = response;
         },
         err => {
         },
@@ -72,6 +72,22 @@ export class StepBasicComponent implements OnInit {
         }
       )
     }
+  }
+
+  resetThisID () {
+    this.renderer.setAttribute(document.body, 'class', 'loader');
+    this._http._post(this.ID+'/ResetTestWorkflow', this.page.pageContent).subscribe(
+      response => {
+        console.log(this.step);
+        this.page.pageContent = response;
+      },
+      err => {
+      },
+      () => {
+        this.router.navigate(['/'+this.ID]);
+        this.renderer.setAttribute(document.body, 'class', '');
+      }
+    )
   }
 
   inputValidated () {

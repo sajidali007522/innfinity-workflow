@@ -13,7 +13,9 @@ export class FormBuilderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    if(this.field.formattedValue) {
+      this.field.modifiedFormattedValue = this.field.formattedValue;
+    }
   }
 
 }
