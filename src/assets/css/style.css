@@ -104,6 +104,10 @@ p {
 ______________________*/
 .logo-wrap{
   background: #fff;
+  position: relative;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+  box-shadow: 0 0 10px rgba(0,0,0, 0.3);
 }
 .logo{
   padding: 15px 0;
