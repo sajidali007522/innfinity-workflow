@@ -6,7 +6,11 @@
   </div>
 </div>
 
-<div class="banner-wrap" [ngStyle]="{Background: page.pageInfo.banner2}"></div>
+<div class="banner-wrap banner-bg-image" [ngStyle]="{Background: page.pageInfo.banner2}">
+  <div class="container">
+    <!-- image will go here then delete "banner-bg-image" this class from top parent -->
+  </div>
+</div>
 <div class="article-wrap" *ngIf="page.pageContent">
     <!--
         1 => label

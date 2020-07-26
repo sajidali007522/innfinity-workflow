@@ -123,11 +123,13 @@ ______________________*/
     border-top-color: #5bc0ed;
   }
 .banner-wrap{
+  margin: 0 0 40px;
+}
+.banner-bg-image{
   background: url(../images/banner.jpg) no-repeat;
   background-position: center 60% !important;
   background-size: cover !important;
   height: 350px;
-  margin: 0 0 40px;
 }
 .loader{
   position: relative;
@@ -441,12 +443,12 @@ ______________________*/
 }
 
 @media (max-width: 1400px) {
-  .banner-wrap{
+  .banner-bg-image{
     height: 280px;
   }
 }
 @media (max-width: 1044px) {
-  .banner-wrap{
+  .banner-bg-image{
     height: 200px;
   }
   .article-wrap h2{
@@ -460,8 +462,10 @@ ______________________*/
 @media (max-width: 767px) {
   .banner-wrap{
     display: none;
-    height: 150px;
     margin: 0 0 25px;
+  }
+  .banner-bg-image{
+    height: 150px;
   }
   .logo{
     padding: 20px 10px;
@@ -474,10 +478,13 @@ ______________________*/
     padding: 30px 25px;
   }
   .article-wrap h2{
-    font-size: 30px;
+    font-size: 22px;
   }
   .article-wrap > div:first-child h2{
-    font-size: 34px;
+    font-size: 22px;
+  }
+  .article-wrap label{
+    font-size: 16px;
   }
   .article-footer .btn{
     padding-left: 40px;
