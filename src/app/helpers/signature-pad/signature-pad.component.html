@@ -1,0 +1,9 @@
+<ngx-extended-pdf-viewer
+  [src]="'/assets/sample.pdf'"
+  backgroundColor="#ffffff"
+  [useBrowserLocale]="true"
+  [handTool]="false"
+  [showHandToolButton]="true"
+  height="80vh">
+</ngx-extended-pdf-viewer>
+<signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>

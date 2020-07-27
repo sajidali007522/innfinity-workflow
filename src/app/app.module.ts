@@ -13,10 +13,14 @@ import { ThankYouComponent } from './wizard/thank-you/thank-you.component';
 import { ConfigService } from './config.service' ;
 import {HttpClientModule} from "@angular/common/http";
 import { FormBuilderComponent } from './helpers/form-builder/form-builder.component';
+import { SignaturePadComponent } from "./helpers/signature-pad/signature-pad.component";
 import {FormsModule} from "@angular/forms";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { SignaturePadModule } from 'ngx-signaturepad';
+import { SignaturesComponent } from './signatures/signatures.component';
+import {NgxExtendedPdfViewerModule} from "ngx-extended-pdf-viewer";
 
 @NgModule({
   declarations: [
@@ -28,7 +32,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     NextShiftComponent,
     NextNewReservationComponent,
     ThankYouComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    SignaturePadComponent,
+    SignaturesComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,7 +43,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     AppRoutingModule,
     BsDatepickerModule.forRoot(),
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    SignaturePadModule,
+    NgxExtendedPdfViewerModule
   ],
   providers: [
     {
