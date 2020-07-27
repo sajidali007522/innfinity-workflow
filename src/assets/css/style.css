@@ -446,6 +446,44 @@ ______________________*/
   height: 0;
 }
 
+
+
+.signature-wrap{
+  overflow: hidden;
+}
+.signature-wrap canvas{
+  background: rgba(0,0,0, 0.1);
+  background: #fff;
+}
+.btn-theme{
+  background: none;
+  border:4px solid #5bc0ed;
+  color: #5bc0ed;
+  font-family: 'poppinsmedium';
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 40px 12px;
+  box-shadow: none;
+  outline: none !important;
+  text-decoration: none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.btn-theme:hover{
+  border-color: #3e7892;
+  color: #3e7892;
+}
+.btn-red{
+  color: #ff0000;
+  border-color: #ff0000;
+}
+.btn-red:hover{
+  color: #b36161;
+  border-color: #b36161;
+}
+
 @media (max-width: 1400px) {
   .banner-bg-image{
     height: 280px;

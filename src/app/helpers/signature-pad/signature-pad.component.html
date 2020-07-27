@@ -1,22 +1,22 @@
-<div class="row">
-  <div class="col-sm-12">
-    <ngx-extended-pdf-viewer
-      [src]="'/assets/sample.pdf'"
-      backgroundColor="#ffffff"
-      [useBrowserLocale]="true"
-      [handTool]="false"
-      [showHandToolButton]="true"
-      height="80vh">
-    </ngx-extended-pdf-viewer>
-    <br />
-    <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+<div class="container">
+  <div class="signature-wrap">
+    <div class="row">
+      <div class="col-sm-12">
+        <ngx-extended-pdf-viewer
+          [src]="'/assets/sample.pdf'"
+          backgroundColor="#ffffff"
+          [useBrowserLocale]="true"
+          [handTool]="false"
+          [showHandToolButton]="true"
+          height="80vh">
+        </ngx-extended-pdf-viewer>
+        <br />
+        <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+      </div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-6">
-    <button class="btn btn-primary btn-block" (click)="clearSignature()">Clear It</button>
-  </div>
-  <div class="col-6">
-    <button class="btn btn-success btn-block" (click)="submitSignature()">Submit</button>
-  </div>
+
+  <button class="btn-theme mr-2" (click)="submitSignature()">Submit</button>
+  <button class="btn-theme btn-red" (click)="clearSignature()">Clear It</button>
+
 </div>
