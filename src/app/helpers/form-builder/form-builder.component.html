@@ -5,6 +5,20 @@
   <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
+<!-- String Input -->
+<p *ngIf="field.dataType == 'EmailAddress'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label"> {{field.label}}</label>
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
+</p>
+
+<!-- String Input -->
+<p *ngIf="field.dataType == 'PhoneNumber'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label"> {{field.label}}</label>
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
+</p>
+
 <!-- Yes / No Select Box -->
 <p *ngIf="field.dataType == 'String' && field.allowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
     <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label">{{field.label}}</label>
@@ -21,6 +35,11 @@
   <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
+
+<p *ngIf="field.dataType == 'PDF'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <app-signature-pad [fileSrc]="field.link"]></app-signature-pad>
+</p>
+
 
 <!-- Date Picker -->
 <p class="datepicker-wrapper" *ngIf="field.dataType == 'Date'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
