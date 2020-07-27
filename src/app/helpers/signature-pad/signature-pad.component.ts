@@ -28,10 +28,17 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
     this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
     this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
   }
+  clearSignature(){
+    this.signaturePad.clear();
+  }
+
+  submitSignature() {
+    console.log(this.signaturePad.toDataURL());
+  }
 
   drawComplete() {
     // will be notified of szimek/signature_pad's onEnd event
-    console.log(this.signaturePad.toDataURL());
+    //console.log(this.signaturePad.toDataURL());
   }
 
   drawStart() {
