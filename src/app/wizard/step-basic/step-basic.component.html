@@ -31,7 +31,9 @@
           <p>{{field.label}}</p>
         </div>
         <div class="form-field" *ngIf="1 == field.visibleFields && field.dataType == 'Waiting'">
+          <div class="timer-wrap">
             <span>{{this.wait}}</span>
+          </div>
         </div>
         <div class="form-field" *ngIf="4 == field.visibleFields || 5 == field.visibleFields">
           <app-form-builder [field]="field" ></app-form-builder>

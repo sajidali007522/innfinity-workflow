@@ -140,7 +140,7 @@ ______________________*/
 }
 .loader:before{
   content: " ";
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -151,7 +151,7 @@ ______________________*/
 }
 .loader:after{
   content: " ";
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   background: url(/assets/images/loading.gif) no-repeat;
@@ -452,10 +452,24 @@ ______________________*/
 
 .signature-wrap{
   overflow: hidden;
+  position: relative;
 }
 .signature-wrap canvas{
   background: rgba(0,0,0, 0.1);
   background: #fff;
+}
+.btn-clear{
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  background: #3e7892;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  outline: none !important;
 }
 .btn-theme{
   background: none;
@@ -512,6 +526,16 @@ ______________________*/
 }
 .not-show{
   display: none !important;
+}
+
+.timer-wrap{
+  text-align: center;
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+  background: url(/assets/images/loading.gif) center bottom no-repeat;
+  background-size: 90px auto;
+  padding:0 20px 100px;
 }
 
 @media (max-width: 1400px) {
