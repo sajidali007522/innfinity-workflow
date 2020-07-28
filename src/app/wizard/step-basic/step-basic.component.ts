@@ -12,12 +12,15 @@ export class StepBasicComponent implements OnInit {
   private ID;
   public page;
   private step;
+  private intervalTime;
+  public wait;
   constructor(private _http: HttpService,
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private renderer: Renderer2
   ) {
     this.step=0;
+    this.wait=0;
     this.page= {
       pageContent:{
         initialConfig: true,
@@ -43,6 +46,7 @@ export class StepBasicComponent implements OnInit {
           response => {
             console.log(response);
             this.page = response;
+            this.setTimer(response['pageContent']['controls'][0]);
           },
           err => {
           },
@@ -54,16 +58,29 @@ export class StepBasicComponent implements OnInit {
     });
   }
 
+  setTimer (field) {
+    if(field.dataType == 'Waiting') {
+      this.wait = Math.ceil(Number(field.formattedValue/1000))+5;
+      this.intervalTime = setInterval(() => {
+        this.wait = this.wait-1;
+        if(this.wait < 0) {
+          field.modifiedFormattedValue = field.formattedValue;
+          clearInterval(this.intervalTime);
+          this.submitForm();
+        }
+      }, 1000);
+    }
+  }
+
   submitForm () {
-    console.log(this.page);
     if (this.inputValidated()) {
       this.step++;
       this.renderer.setAttribute(document.body, 'class', 'loader');
       //this._http._get('workflow.json').subscribe(
       this._http._post(this.ID+'/continue', this.page.pageContent).subscribe(
         response => {
-          console.log(this.step);
           this.page.pageContent = response;
+          this.setTimer(response['controls'][0]);
         },
         err => {
         },

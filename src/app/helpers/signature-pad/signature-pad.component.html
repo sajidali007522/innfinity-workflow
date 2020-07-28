@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-12">
         <ngx-extended-pdf-viewer
-          [src]="'/assets/sample.pdf'"
+          [src]="fileSrc"
           backgroundColor="#ffffff"
           [useBrowserLocale]="true"
           [handTool]="false"
@@ -15,8 +15,6 @@
       </div>
     </div>
   </div>
-
-  <button class="btn-theme mr-2" (click)="submitSignature()">Submit</button>
   <button class="btn-theme btn-red" (click)="clearSignature()">Clear It</button>
 
 </div>

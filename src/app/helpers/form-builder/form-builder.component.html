@@ -37,7 +37,7 @@
 </p>
 
 <p *ngIf="field.dataType == 'PDF'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
-  <app-signature-pad [fileSrc]="field.link"]></app-signature-pad>
+  <app-signature-pad [fileSrc]="field.formattedValue" (signed)="onSigned($event)"></app-signature-pad>
 </p>
 
 

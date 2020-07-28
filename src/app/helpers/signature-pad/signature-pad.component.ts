@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import { SignaturePad } from 'ngx-signaturepad';
 
 @Component({
@@ -10,6 +10,7 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
   @Input() fileSrc;
+  @Output() signed= new EventEmitter();
   signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
     'canvasWidth': 500,
@@ -38,12 +39,12 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
 
   drawComplete() {
     // will be notified of szimek/signature_pad's onEnd event
-    //console.log(this.signaturePad.toDataURL());
+    this.signed.emit(this.signaturePad.toDataURL());
   }
 
   drawStart() {
     // will be notified of szimek/signature_pad's onBegin event
-    console.log('begin drawing');
+    //console.log('begin drawing');
   }
 
 }
