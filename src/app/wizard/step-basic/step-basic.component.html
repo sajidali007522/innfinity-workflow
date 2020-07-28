@@ -1,3 +1,7 @@
+<div class="processed-wrap not-show">
+  <div class="proceed-txt">Please Wait for 10 Sec</div>
+</div>
+
 <div class="logo-wrap">
   <div class="container">
     <div class="logo">
@@ -6,9 +10,10 @@
   </div>
 </div>
 
-<div class="banner-wrap banner-bg-image" [ngStyle]="{Background: page.pageInfo.banner2}">
+<div class="banner-wrap banner-bg-image" style="background: url({{page.pageInfo.banner2}});">
   <div class="container">
     <!-- image will go here then delete "banner-bg-image" this class from top parent -->
+    <!-- <img src="{{page.pageInfo.banner2}}" alt=""> -->
   </div>
 </div>
 <div class="article-wrap" *ngIf="page.pageContent">
