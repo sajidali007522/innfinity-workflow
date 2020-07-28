@@ -17,7 +17,6 @@ export class FormBuilderComponent implements OnInit,OnDestroy {
   }
 
   onSigned(signatureUrl) {
-    console.log(signatureUrl);
     this.field.modifiedFormattedValue = signatureUrl;
   }
 

@@ -34,7 +34,7 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
   }
 
   submitSignature() {
-    console.log(this.signaturePad.toDataURL());
+    //console.log(this.signaturePad.toDataURL());
   }
 
   drawComplete() {
