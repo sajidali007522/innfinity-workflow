@@ -678,6 +678,9 @@ ______________________*/
     width: 100%;
     padding: 0 0 10px;
   }
+  ngx-extended-pdf-viewer .zoom {
+    height: 49vh !important;
+  }
   .article-thankyou h2{
     font-size: 30px;
   }
