@@ -11,16 +11,16 @@ import { FormBuilderComponent } from "../../helpers/form-builder/form-builder.co
 export class StepBasicComponent implements OnInit {
   private ID;
   public page;
-  private step;
+  private step=0;
   private intervalTime;
-  public wait;
+  public wait=0;
+  public error=false;
+
   constructor(private _http: HttpService,
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private renderer: Renderer2
   ) {
-    this.step=0;
-    this.wait=0;
     this.page= {
       pageContent:{
         initialConfig: true,
@@ -37,11 +37,9 @@ export class StepBasicComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.params.subscribe(params => {
-      console.log(params);
       this.ID = params["ID"];
       if(this.ID) {
         this.renderer.setAttribute(document.body, 'class', 'loader');
-        //this._http._get('login-input.json?id=' + this.ID).subscribe(
         this._http._get(this.ID+'').subscribe(
           response => {
             console.log(response);
@@ -74,7 +72,7 @@ export class StepBasicComponent implements OnInit {
 
   submitForm () {
     if (this.inputValidated()) {
-      this.step++;
+      this.error = false;
       this.renderer.setAttribute(document.body, 'class', 'loader');
       //this._http._get('workflow.json').subscribe(
       this._http._post(this.ID+'/continue', this.page.pageContent).subscribe(
@@ -88,6 +86,8 @@ export class StepBasicComponent implements OnInit {
           this.renderer.setAttribute(document.body, 'class', '');
         }
       )
+    } else {
+      this.error=true;
     }
   }
 
@@ -95,14 +95,12 @@ export class StepBasicComponent implements OnInit {
     this.renderer.setAttribute(document.body, 'class', 'loader');
     this._http._post(this.ID+'/ResetTestWorkflow', this.page.pageContent).subscribe(
       response => {
-        console.log(this.step);
         this.page.pageContent = response;
       },
       err => {
       },
       () => {
-        this.router.navigate(['/'+this.ID]);
-        this.renderer.setAttribute(document.body, 'class', '');
+        window.location.href = '/'+this.ID;
       }
     )
   }
