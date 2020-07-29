@@ -11,8 +11,10 @@
     </div>
     <div class="sign-pad-wrap">
       <div class="sign-title" >You can Sign here</div>
-      <div class="sign-placeholder" [ngClass]="{'has-text': signingIn}">Sign here</div>
-      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+      <div class="sign-contain">
+        <div class="sign-placeholder" [ngClass]="{'has-text': signingIn}">Sign here</div>
+        <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+      </div>
       <button class="btn-clear" (click)="clearSignature()">Clear</button>
     </div>
 </div>

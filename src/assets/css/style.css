@@ -391,8 +391,7 @@ ______________________*/
     width: calc(100% - 550px);
   }
   .signature-wrap canvas{
-    background: rgba(0,0,0, 0.1);
-    background: #fff;
+    background: none;
   }
   .sign-pad-wrap{
     margin-left: auto;
@@ -407,7 +406,7 @@ ______________________*/
   .btn-clear{
     position: absolute;
     right: 0;
-    bottom: -50px;
+    bottom: -60px;
     background: none;
     color: #fff;
     display: inline-block;
@@ -420,15 +419,28 @@ ______________________*/
     color: #5bc0ed;
     border-radius: 8px;
   }
+  .sign-contain{
+    position: relative;
+  }
   .sign-placeholder{
     position: absolute;
     left: 0;
-    top: 35%;
+    top: 0;
     width: 100%;
+    height: 100%;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
     color: #999;
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
+    background: #fff;
+  }
+  .sign-placeholder.has-text{
+    font-size: 0;
   }
 .modal{
   background: #FF9975;
@@ -596,12 +608,13 @@ ______________________*/
   }
   .sign-placeholder{
     text-align: left;
+    justify-content: flex-start;
     padding: 0 20px;
   }
   .btn-clear{
     right: auto;
     left: 0;
-    bottom: 9px;
+    bottom: 0;
     border-radius: 0;
     font-size: 12px;
     padding: 7px 22px 6px;
