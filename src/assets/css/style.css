@@ -1,51 +1,41 @@
 @font-face {
-    font-family: 'playfair_displayblack';
-    src: url('../fonts/playfairdisplay-black-webfont.woff2') format('woff2'),
-         url('../fonts/playfairdisplay-black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Segoe';
+  src: url('../fonts/SegoeUI.woff2') format('woff2'),
+      url('../fonts/SegoeUI.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'playfair_displaybold';
-    src: url('../fonts/playfairdisplay-bold-webfont.woff2') format('woff2'),
-         url('../fonts/playfairdisplay-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Segoe-Bold';
+  src: url('../fonts/SegoeUI-Bold.woff2') format('woff2'),
+      url('../fonts/SegoeUI-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'playfair_displayregular';
-    src: url('../fonts/playfairdisplay-regular-webfont.woff2') format('woff2'),
-         url('../fonts/playfairdisplay-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Segoe-BoldItalic';
+  src: url('../fonts/SegoeUI-BoldItalic.woff2') format('woff2'),
+      url('../fonts/SegoeUI-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'poppinsregular';
-    src: url('../fonts/poppins-regular-webfont.woff2') format('woff2'),
-         url('../fonts/poppins-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'poppinsbold';
-    src: url('../fonts/poppins-bold-webfont.woff2') format('woff2'),
-         url('../fonts/poppins-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'poppinsmedium';
-    src: url('../fonts/poppins-medium-webfont.woff2') format('woff2'),
-         url('../fonts/poppins-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Segoe-Italic';
+  src: url('../fonts/SegoeUI-Italic.woff2') format('woff2'),
+      url('../fonts/SegoeUI-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
 
 /* Default Font Styles
 ______________________*/
 body, input, select, textarea {
-  font-family: 'poppinsregular';
+  font-family: 'Segoe';
   font-size: 18px;
   color: #7C7C7C;
   line-height: 1.3;
@@ -59,8 +49,8 @@ body{
 /* Headings
 ______________________*/
 h1,h2,h3,h4,h5,h6{
-  font-family: 'playfair_displayblack';
-  font-weight: 900;
+  font-family: 'Segoe-Bold';
+  font-weight: 700;
   color: #000000;
   line-height: 1.2;
   margin: 0 0 25px;
@@ -168,14 +158,14 @@ ______________________*/
 }
   .article-wrap h2{
     font-size: 26px;
-    line-height: 1.6;
+    line-height: 1.4;
     margin: 0 0 10px;
     padding-top: 20px;
   }
     .article-wrap > div:first-child h2{
-      font-size: 48px;
-      line-height: 1.3;
-      margin: 0 0 30px;
+      font-size: 40px;
+      line-height: 1.2;
+      margin: 0 0 35px;
       padding: 0;
     }
   .form-field{
@@ -201,6 +191,9 @@ ______________________*/
     font-weight: bold;
     font-size: 20px;
     color: #000;
+  }
+  .article-wrap label .required{
+    color: #e46e6e;
   }
   .article-wrap label.error {
     color: #ff0000;
@@ -258,9 +251,9 @@ ______________________*/
   .article-footer .btn{
     border:4px solid #5bc0ed;
     color: #5bc0ed;
-    font-family: 'poppinsmedium';
     font-size: 18px;
-    font-weight: 600;
+    font-family: 'Segoe-Bold';
+    font-weight: 700;
     text-transform: uppercase;
     padding: 18px 70px 16px;
     -moz-border-radius: 10px;
@@ -359,8 +352,6 @@ ______________________*/
       padding: 14px 50px 12px 20px;
       font-size: 18px;
       color: #000000;
-      font-weight: 600;
-      font-family: 'poppinsmedium';
       background:#fff url(../images/select-arrow.png) right center no-repeat;
       background-size: 45px 60px;
       border:3px solid #5bc0ed !important;
@@ -384,6 +375,61 @@ ______________________*/
     .article-thankyou .article-footer{
       justify-content: center;
     }
+.form-pdf-wrap{
+  max-width: inherit;
+  width: 1400px;
+  margin-left: -350px;
+}
+  .signature-wrap{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .sign-pdf{
+    width: calc(100% - 550px);
+  }
+  .signature-wrap canvas{
+    background: rgba(0,0,0, 0.1);
+    background: #fff;
+  }
+  .sign-pad-wrap{
+    margin-left: auto;
+    position: relative;
+  }
+  .sign-title{
+    background: #454545;
+    color: #fff;
+    font-size: 12px;
+    padding: 11px 20px 8px;
+  }
+  .btn-clear{
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    background: none;
+    color: #fff;
+    display: inline-block;
+    padding: 8px 29px 6px;
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    outline: none !important;
+    border: 4px solid #5bc0ed;
+    color: #5bc0ed;
+    border-radius: 8px;
+  }
+  .sign-placeholder{
+    position: absolute;
+    left: 0;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+  }
 .modal{
   background: #FF9975;
 }
@@ -420,9 +466,9 @@ ______________________*/
   }
   .modal-content h3{
     color: #F85647;
-    font-family: 'poppinsmedium';
-    font-weight: 600;
     font-size: 26px;
+    font-family: 'Segoe-Bold';
+    font-weight: bold;
   }
 .footer{
   text-align: center;
@@ -450,34 +496,13 @@ ______________________*/
 
 
 
-.signature-wrap{
-  overflow: hidden;
-  position: relative;
-}
-.signature-wrap canvas{
-  background: rgba(0,0,0, 0.1);
-  background: #fff;
-}
-.btn-clear{
-  position: absolute;
-  right: 0;
-  bottom: 12px;
-  background: #3e7892;
-  color: #fff;
-  display: inline-block;
-  padding: 5px 20px;
-  font-weight: bold;
-  font-size: 14px;
-  border: none;
-  outline: none !important;
-}
 .btn-theme{
   background: none;
   border:4px solid #5bc0ed;
   color: #5bc0ed;
-  font-family: 'poppinsmedium';
+  font-family: 'Segoe-Bold';
+  font-weight: 700;
   font-size: 18px;
-  font-weight: 600;
   text-transform: uppercase;
   padding: 15px 40px 12px;
   box-shadow: none;
@@ -538,9 +563,50 @@ ______________________*/
   padding:0 20px 100px;
 }
 
+@media (max-width: 1500px) {
+  .form-pdf-wrap{
+    width: 1200px;
+    margin-left: -250px;
+  }
+}
 @media (max-width: 1400px) {
   .banner-bg-image{
     height: 350px;
+  }
+  .form-pdf-wrap{
+    width: 1000px;
+    margin-left: -150px;
+  }
+}
+@media (max-width: 1200px) {
+  .form-pdf-wrap{
+    width: 100%;
+    margin-left: 0;
+  }
+  .signature-wrap{
+    display: block;
+  }
+  .sign-pdf{
+    width: 100%;
+    margin: 0 0 35px;
+  }
+  .sign-pad-wrap{
+    width: 500px;
+    margin: 0 auto;
+  }
+  .sign-placeholder{
+    text-align: left;
+    padding: 0 20px;
+  }
+  .btn-clear{
+    right: auto;
+    left: 0;
+    bottom: 9px;
+    border-radius: 0;
+    font-size: 12px;
+    padding: 7px 22px 6px;
+    background: #5bc0ed;
+    color: #fff;
   }
 }
 @media (max-width: 1044px) {

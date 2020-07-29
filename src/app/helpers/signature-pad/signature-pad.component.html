@@ -1,21 +1,18 @@
-<div class="container">
-  <div class="signature-wrap">
-    <div class="row">
-      <div class="col-sm-12">
-        <ngx-extended-pdf-viewer
-          [base64Src]="fileSrc"
-          backgroundColor="#ffffff"
-          [useBrowserLocale]="true"
-          [handTool]="false"
-          [showHandToolButton]="true"
-          height="80vh">
-        </ngx-extended-pdf-viewer>
-        <br />
-        <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
-      </div>
+<div class="signature-wrap">
+    <div class="sign-pdf">
+      <ngx-extended-pdf-viewer
+        [base64Src]="fileSrc"
+        backgroundColor="#ffffff"
+        [useBrowserLocale]="true"
+        [handTool]="false"
+        [showHandToolButton]="true"
+        height="80vh">
+      </ngx-extended-pdf-viewer>
     </div>
-
-    <button class="btn-clear" (click)="clearSignature()">Clear</button>
-  </div>
-
+    <div class="sign-pad-wrap">
+      <div class="sign-title">You can Sign here</div>
+      <div class="sign-placeholder">Sign here</div>
+      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+      <button class="btn-clear" (click)="clearSignature()">Clear</button>
+    </div>
 </div>
