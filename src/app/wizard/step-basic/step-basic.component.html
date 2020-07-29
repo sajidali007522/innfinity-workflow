@@ -35,7 +35,7 @@
             <span>{{this.wait}}</span>
           </div>
         </div>
-        <div class="form-field" *ngIf="4 == field.visibleFields || 5 == field.visibleFields">
+        <div class="form-field" *ngIf="4 == field.visibleFields || 5 == field.visibleFields" [ngClass]="{'form-pdf-wrap':  field.dataType == 'PDF'}">
           <app-form-builder [field]="field" ></app-form-builder>
         </div>
       </div>

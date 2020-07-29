@@ -11,6 +11,8 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
   @Input() fileSrc;
   @Output() signed= new EventEmitter();
+
+  public signingIn;
   signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
     'canvasWidth': 500,
@@ -19,6 +21,7 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
 
   constructor() {
     // no-op
+    this.signingIn = false;
   }
 
   ngOnInit() {
@@ -30,6 +33,7 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
     this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
   }
   clearSignature(){
+    this.signingIn=false;
     this.signaturePad.clear();
   }
 
@@ -43,6 +47,7 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
   }
 
   drawStart() {
+    this.signingIn=true;
     // will be notified of szimek/signature_pad's onBegin event
     //console.log('begin drawing');
   }
