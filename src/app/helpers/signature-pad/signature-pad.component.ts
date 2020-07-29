@@ -41,6 +41,10 @@ export class SignaturePadComponent implements OnInit,AfterViewInit {
     //console.log(this.signaturePad.toDataURL());
   }
 
+  disablePlaceHolder () {
+    this.signingIn = true;
+  }
+
   drawComplete() {
     // will be notified of szimek/signature_pad's onEnd event
     this.signed.emit(this.signaturePad.toDataURL());
