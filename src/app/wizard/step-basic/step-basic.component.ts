@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Renderer2} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpService} from "../../http.service";
 import { FormBuilderComponent } from "../../helpers/form-builder/form-builder.component";
@@ -9,6 +9,8 @@ import { FormBuilderComponent } from "../../helpers/form-builder/form-builder.co
   styleUrls: ['./step-basic.component.css']
 })
 export class StepBasicComponent implements OnInit {
+  @Input() submitFired;
+
   private ID;
   public page;
   private step=0;
@@ -56,6 +58,11 @@ export class StepBasicComponent implements OnInit {
     });
   }
 
+  onSubmitfired (isEnterPressed) {
+    if(isEnterPressed){
+      this.submitForm();
+    }
+  }
   setTimer (field) {
     if(field.dataType == 'Waiting') {
       this.wait = Math.ceil(Number(field.formattedValue/1000))+5;

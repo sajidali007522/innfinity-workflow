@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="form-field" *ngIf="4 == field.visibleFields || 5 == field.visibleFields" [ngClass]="{'form-pdf-wrap':  field.dataType == 'PDF'}">
-          <app-form-builder [field]="field" ></app-form-builder>
+          <app-form-builder [field]="field" (fireSubmit)="onSubmitfired($event)"></app-form-builder>
         </div>
       </div>
     </div>

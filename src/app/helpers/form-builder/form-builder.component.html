@@ -1,14 +1,14 @@
 <!-- String Input -->
 <p *ngIf="field.dataType == 'String' && !field.allowedValues" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label">{{field.label}} <span *ngIf="field.isRequired" class="required" >*</span></label>
-  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" (keyup.enter)="fireSubmitEvent()" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
 <!-- String Input -->
 <p *ngIf="field.dataType == 'EmailAddress'" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label popover="{{field.tooltip}}" triggers="mouseenter:mouseleave" *ngIf="field.label">{{field.label}} <span *ngIf="field.isRequired" class="required" >*</span></label>
-  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
+  <input *ngIf="4 == field.visibleFields || 5 == field.visibleFields" (keyup.enter)="fireSubmitEvent()" type="text" [(ngModel)]="field.modifiedFormattedValue" placeholder="{{field.label}}" [required]="field.IsRequired" class="form-control custom-field" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">
   <label *ngIf="field.errorMessage && field.errorMessage != ''" [ngClass]="{'error': field.errorMessage && field.errorMessage != ''}">{{field.errorMessage}}</label>
 </p>
 
