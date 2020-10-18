@@ -107,7 +107,7 @@ export class StepBasicComponent implements OnInit {
       err => {
       },
       () => {
-        window.location.href = '/'+this.ID;
+        window.location.href = '/#/'+this.ID;
       }
     )
   }

@@ -21,6 +21,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SignaturePadModule } from 'ngx-signaturepad';
 import { SignaturesComponent } from './signatures/signatures.component';
 import {NgxExtendedPdfViewerModule} from "ngx-extended-pdf-viewer";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {NgxExtendedPdfViewerModule} from "ngx-extended-pdf-viewer";
     NgxExtendedPdfViewerModule
   ],
   providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     {
       provide: APP_INITIALIZER,
       multi: true,
